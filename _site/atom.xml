@@ -4,12 +4,22 @@
  <title>Xinyu</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <id>http://localhost:4000</id>
- <updated>2018-09-01T22:05:42-04:00</updated>
+ <updated>2018-09-03T11:53:11-04:00</updated>
  <author>
    <name></name>
    <uri></uri>
    <email></email>
  </author>
+
+ 
+
+ <entry>
+   <title>Deep Learning Concept 2: mAP on object detection</title>
+   <link href="http://localhost:4000/Deep-Learning-02"/>
+   <id>http://localhost:4000/Deep-Learning-02</id>
+   <updated>2018-09-03T00:00:00-04:00</updated>
+   <content type="html">&lt;p&gt;Object detection model evaluation has two parts: what object it is (classification) and where it is (localization).&lt;/p&gt; &lt;p&gt;To evaluate the classification part, there are two useful metrics: precision and recall. They are defined as&lt;/p&gt; &lt;script type=&quot;math/tex; mode=display&quot;&gt;Precision = \frac{true_positive}{true_positive + false_positive}&lt;/script&gt; &lt;script type=&quot;math/tex; mode=display&quot;&gt;Recall = \frac{true_positive}{true_positive + false_negative}&lt;/script&gt; &lt;p&gt;Precision says...</content>
+ </entry>
 
  
 
@@ -28,7 +38,7 @@
    <link href="http://localhost:4000/Deep-Learning-Start"/>
    <id>http://localhost:4000/Deep-Learning-Start</id>
    <updated>2018-08-26T00:00:00-04:00</updated>
-   <content type="html">&lt;p&gt;There are lots of lectures, blogs, notes about deep learning. This series aims to explain some fundamental concept. The goal is to keep it as simple and short as possible. It will come with two parts: what problem it is trying to solve and how it works&lt;/p&gt;
+   <content type="html">&lt;p&gt;There are lots of lectures, blogs, notes about deep learning. This series aims to explain some fundamental concept. The goal is to keep it as simple and short as possible. It will try to resolve two questions: what problem it is trying to solve and how it works&lt;/p&gt;
 </content>
  </entry>
 

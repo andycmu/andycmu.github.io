@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 	<meta name="generator" content="Jekyll">
 
-	<title>404 - Page not found</title>
+	<title>Deep Learning Concept 2: mAP on object detection</title>
   <meta name="description" content="">
 
 	<!-- CSS & fonts -->
@@ -113,8 +113,30 @@
 		  
 		<main>
 
-			<h1 id="404---page-not-found">404 - Page not found</h1>
-<p>Sorry, we couldn’t find the requested URL. You can try again by going <a href="/">back to the homepage</a>.</p>
+			<article id="post-page">
+	<h2>Deep Learning Concept 2: mAP on object detection</h2>		
+	<time datetime="2018-09-03T00:00:00-04:00" class="by-line">03 Sep 2018</time>
+	<div class="content">
+
+		<p>Object detection model evaluation has two parts: what object it is (classification) and where it is (localization).</p>
+
+<p>To evaluate the classification part, there are two useful metrics: precision and recall. They are defined as</p>
+
+<script type="math/tex; mode=display">Precision = \frac{true_positive}{true_positive + false_positive}</script>
+
+<script type="math/tex; mode=display">Recall = \frac{true_positive}{true_positive + false_negative}</script>
+
+<p>Precision says how many correct objects are detected out of all detected objects. Recall says how many correct objects are detected out of all labelled objects. There is a inverse relationship between precision and recall. The higher precision is, the lower recall is and vice versa. To compare two classification algorithm, you can directly compare the two curves. However we have one problem here: most curves are zigzagged, meaning the two curve you compare will intersects a lot. Therefore, an reasonable way to compare these curve is to calcualte the area under curve (AUC). We define AP as</p>
+
+<script type="math/tex; mode=display">AP = \sum_{n} (R_{n} - R_{n-1})P_{n}</script>
+
+<p>where <script type="math/tex">P_{n}</script> and <script type="math/tex">R_{n}</script> are the precision and recall at the nth threshold.</p>
+
+
+		
+	</div>
+</article>
+
 
 
 	  </main>
