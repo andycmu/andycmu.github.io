@@ -17,4 +17,4 @@ $$AP = \sum_{n} (R_{n} - R_{n-1})P_{n}$$
 
 where $$P_{n}$$ and $$R_{n}$$ are the precision and recall at the nth threshold.
 
-Up till now, we are only evaluating classification result. To evaluate localization, we need to calculate intersection over union (IoU). We define a correct object detection as one with IoU larger than a threshold. Then mAP is defined as average AP among all IOU threshold. mAP@.75 means the mAP with IoU-0.75
+Up till now, we are only evaluating classification result. To evaluate localization, we need to calculate intersection over union (IoU). We define a correct object detection as one with IoU larger than a threshold. Then mAP is defined as average AP among all IOU threshold. mAP@.75 means the mAP with IoU=0.75
