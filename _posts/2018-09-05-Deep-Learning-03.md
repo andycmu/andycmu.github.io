@@ -6,7 +6,7 @@ title: "Deep Learning Concept 3: Learning Rate"
 ### What is a learning rate?
 Learning rate is a hyper-parameter that controls how much we are adjusting the weights of our network with respect to the loss gradient
 
-$$new_weight = existing_weight - learning_rate * gradient$$
+$$new\_weight = existing\_weight - learning\_rate * gradient$$
 
 ### Why is learning rate important?
 Learning rate affects how quickly our model can converge to a local minima. Choosing a bad learning rate can results in network either fail to train or take much longer to converge.

@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 	<meta name="generator" content="Jekyll">
 
-	<title>Deep Learning Concept 2: mAP on object detection</title>
+	<title>Deep Learning Concept 3: Learning Rate</title>
   <meta name="description" content="">
 
 	<!-- CSS & fonts -->
@@ -114,25 +114,26 @@
 		<main>
 
 			<article id="post-page">
-	<h2>Deep Learning Concept 2: mAP on object detection</h2>		
-	<time datetime="2018-09-03T00:00:00-04:00" class="by-line">03 Sep 2018</time>
+	<h2>Deep Learning Concept 3: Learning Rate</h2>		
+	<time datetime="2018-09-05T00:00:00-04:00" class="by-line">05 Sep 2018</time>
 	<div class="content">
 
-		<p>Object detection model evaluation has two parts: what object it is (classification) and where it is (localization).</p>
+		<h3 id="what-is-a-learning-rate">What is a learning rate?</h3>
+<p>Learning rate is a hyper-parameter that controls how much we are adjusting the weights of our network with respect to the loss gradient</p>
 
-<p>To evaluate the classification part, there are two useful metrics: precision and recall. They are defined as</p>
+<script type="math/tex; mode=display">new\_weight = existing\_weight - learning\_rate * gradient</script>
 
-<script type="math/tex; mode=display">Precision = \frac{true_positive}{true_positive + false_positive}</script>
+<h3 id="why-is-learning-rate-important">Why is learning rate important?</h3>
+<p>Learning rate affects how quickly our model can converge to a local minima. Choosing a bad learning rate can results in network either fail to train or take much longer to converge.</p>
 
-<script type="math/tex; mode=display">Recall = \frac{true_positive}{true_positive + false_negative}</script>
+<h3 id="how-to-choose-the-best-learning-rate">How to choose the best learning rate?</h3>
+<p>First we need to find the optimal learning rate range. The idea is that when learning rate is too low, the loss may also decrease very slow. When it gets into optimal range, the loss will drop quickly and when it gets out of optimal range, the loss will bounce around and even diverge from minima. In this way, we can know what is the optimal range.
+Then after that, during training there are two way we can automatically adjust the learning rate:</p>
+<ol>
+  <li>learning rate annealing: start with relatively high learning rate and then gradually lowering the learning rate during training. The idea is that we can quickly get to the area of local minima and then find the local minima through small learning rate</li>
+  <li>Cycle learning rate: initially proposed in this <a href="https://arxiv.org/abs/1506.01186">paper</a>. The author proposed a cyclical learning rate schdule which bounced between two values. It is a triangular update with either fixed cyclic decay or an exponential cyclic decay.</li>
+</ol>
 
-<p>Precision says how many correct objects are detected out of all detected objects. Recall says how many correct objects are detected out of all labelled objects. There is a inverse relationship between precision and recall. The higher precision is, the lower recall is and vice versa. To compare two classification algorithm, you can directly compare the two curves. However we have one problem here: most curves are zigzagged, meaning the two curve you compare will intersects a lot. Therefore, an reasonable way to compare these curve is to calcualte the area under curve (AUC). We define AP as</p>
-
-<script type="math/tex; mode=display">AP = \sum_{n} (R_{n} - R_{n-1})P_{n}</script>
-
-<p>where <script type="math/tex">P_{n}</script> and <script type="math/tex">R_{n}</script> are the precision and recall at the nth threshold.</p>
-
-<p>Up till now, we are only evaluating classification result. To evaluate localization, we need to calculate intersection over union (IoU). We define a correct object detection as one with IoU larger than a threshold. Then mAP is defined as average AP among all IOU threshold. mAP@.75 means the mAP with IoU=0.75</p>
 
 		
 	</div>
