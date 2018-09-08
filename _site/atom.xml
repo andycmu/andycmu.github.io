@@ -4,12 +4,22 @@
  <title>Xinyu</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <id>http://localhost:4000</id>
- <updated>2018-09-05T23:27:12-04:00</updated>
+ <updated>2018-09-08T11:16:35-04:00</updated>
  <author>
    <name></name>
    <uri></uri>
    <email></email>
  </author>
+
+ 
+
+ <entry>
+   <title>Deep Learning Concept 4: Mini Batch</title>
+   <link href="http://localhost:4000/Deep-Learning-04"/>
+   <id>http://localhost:4000/Deep-Learning-04</id>
+   <updated>2018-09-08T00:00:00-04:00</updated>
+   <content type="html">&lt;h3 id=&quot;what-is-mini-batch&quot;&gt;What is mini batch&lt;/h3&gt; &lt;p&gt;To understand what is mini batch, let’s first take a look at &lt;strong&gt;batch gradient descent&lt;/strong&gt;. For batch gradient descent, in each iteration you go through all the training data. You expect the cost to go down on &lt;strong&gt;every single&lt;/strong&gt; iteration.&lt;/p&gt; &lt;p&gt;In &lt;strong&gt;mini batch gradient descent&lt;/strong&gt;,...</content>
+ </entry>
 
  
 
