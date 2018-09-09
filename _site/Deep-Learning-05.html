@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- Meta -->
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<meta name="generator" content="Jekyll">
+
+	<title>Deep Learning Concept 5: channel</title>
+  <meta name="description" content="">
+
+	<!-- CSS & fonts -->
+	<link rel="stylesheet" href="/css/main.css">
+
+	<!-- RSS -->
+	<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" />
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+
+</head>
+
+
+<body>
+	<div id="wrap">
+	  	
+	  	<!-- Navigation -->
+	  	<nav id="nav">
+	<div id="nav-list">
+		<a href="//">Home</a>
+
+		<!-- Nav pages -->
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+    
+    <!-- Nav links -->
+	  
+
+
+	</div>
+  
+  <!-- Nav footer -->
+	
+	  <footer>
+	
+	<span>version 1.0.0</span>
+
+</footer>
+	
+
+</nav>
+
+    
+    <!-- Icon menu -->
+	  <a id="nav-menu">
+	  	<div id="menu"></div>
+	  </a>
+
+      <!-- Header -->
+      
+        <header id="header" class="parent justify-spaceBetween">
+  <div class="inner w100 relative">
+    <span class="f-left">  
+      <a href="//">
+        <h1>
+          <span>Xinyu Wu</span>
+        </h1>
+      </a>
+    </span>
+    <span id="nav-links" class="absolute right bottom">
+      <!-- Nav pages -->
+	    
+	      
+	    
+	      
+	    
+	      
+	    
+	      
+	    
+	      
+	    
+	      
+	    
+      
+      <!-- Nav links -->
+	    
+
+
+    </span>
+  </div>
+</header>
+
+
+
+
+      
+
+    <!-- Main content -->
+	  <div id="container">
+		  
+		<main>
+
+			<article id="post-page">
+	<h2>Deep Learning Concept 5: channel</h2>		
+	<time datetime="2018-09-09T00:00:00-04:00" class="by-line">09 Sep 2018</time>
+	<div class="content">
+
+		<p>In each one of the convolutional layer, there are input and output images. Each images will have <script type="math/tex">W \timesH</script> 2D size and a third dimension called channel. What does channel mean here?</p>
+
+<p>In the simple case, we have the initial input image as RGB image. Then there are naturally 3 channels: red, green and blue. In this case, for each input image channel, you have to have a corresponding filter channel to convolve on, so the number of filter channel needs to be the same as the number of image channel. The result of this convolution is a 2D image with size of (n - f + 1) assuming strides as 1 and no padding. 
+What decides output image channel? The number of filter you use. Each filter will create one output channel and you can stack all filters outputs together to generate the output volume.</p>
+
+<p>In summary, given input <script type="math/tex">n \times n \times n_{c}</script>, we use this kind of filters <script type="math/tex">f \times f\ times n_{c}</script>. The result will be <script type="math/tex">(n-f+1) \times (n-f+1) \times n_{c}^{\prime}</script>. The output channel number depend not on the input channel number, but on the number of filter we use.</p>
+
+		
+	</div>
+</article>
+
+
+
+	  </main>
+		
+		  <!-- Pagination links -->
+      
+
+	  </div>
+	    
+	    <!-- Footer -->
+	    <footer><span></span></footer>
+
+
+	    <!-- Script -->
+      <script src="/js/main.js"></script>	
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+	</div>
+</body>
+</html>
