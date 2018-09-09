@@ -118,12 +118,15 @@
 	<time datetime="2018-09-09T00:00:00-04:00" class="by-line">09 Sep 2018</time>
 	<div class="content">
 
-		<p>In each one of the convolutional layer, there are input and output images. Each images will have <script type="math/tex">W \timesH</script> 2D size and a third dimension called channel. What does channel mean here?</p>
+		<p>In each one of the convolutional layer, there are input and output images. Each images will have <script type="math/tex">W \times H</script> 2D size and a third dimension called channel. What does channel mean here?</p>
 
 <p>In the simple case, we have the initial input image as RGB image. Then there are naturally 3 channels: red, green and blue. In this case, for each input image channel, you have to have a corresponding filter channel to convolve on, so the number of filter channel needs to be the same as the number of image channel. The result of this convolution is a 2D image with size of (n - f + 1) assuming strides as 1 and no padding. 
 What decides output image channel? The number of filter you use. Each filter will create one output channel and you can stack all filters outputs together to generate the output volume.</p>
 
-<p>In summary, given input <script type="math/tex">n \times n \times n_{c}</script>, we use this kind of filters <script type="math/tex">f \times f\ times n_{c}</script>. The result will be <script type="math/tex">(n-f+1) \times (n-f+1) \times n_{c}^{\prime}</script>. The output channel number depend not on the input channel number, but on the number of filter we use.</p>
+<p>In summary, given input <script type="math/tex">n \times n \times n_{c}</script>, we use this kind of filters <script type="math/tex">f \times f\ times n_{c}</script>. The result will be <script type="math/tex">(n-f+1) \times (n-f+1) \times n_{c}^{\prime}</script>. The output channel number depend not on the input channel number, but on the number of filter we use. In the pytorch package, you can define the input channel and output channel directly in the API</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">in_channels</span><span class="p">,</span> <span class="n">out_channels</span><span class="p">,</span> <span class="n">kernel_size</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">dilation</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">groups</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+<p>and the neural network will learn the weights by itself during training process.</p>
 
 		
 	</div>
