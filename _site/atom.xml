@@ -4,12 +4,22 @@
  <title>Xinyu</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <id>http://localhost:4000</id>
- <updated>2018-09-09T16:45:28-04:00</updated>
+ <updated>2018-09-10T23:19:34-04:00</updated>
  <author>
    <name></name>
    <uri></uri>
    <email></email>
  </author>
+
+ 
+
+ <entry>
+   <title>Deep Learning Concept 6: cross entropy loss</title>
+   <link href="http://localhost:4000/Deep-Learning-06"/>
+   <id>http://localhost:4000/Deep-Learning-06</id>
+   <updated>2018-09-10T00:00:00-04:00</updated>
+   <content type="html">&lt;p&gt;The most common loss function used in machine learning are MAE (mean absolute error), MSE (mean squared error) and cross entropy loss. This blog introduces cross entropy loss.&lt;br /&gt; We calcualte this loss for classification model which outputs a probability for each class.&lt;/p&gt; &lt;h3 id=&quot;explanation-with-intuition&quot;&gt;Explanation with intuition&lt;/h3&gt; &lt;p&gt;this loss increases...</content>
+ </entry>
 
  
 

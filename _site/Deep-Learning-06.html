@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- Meta -->
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<meta name="generator" content="Jekyll">
+
+	<title>Deep Learning Concept 6: cross entropy loss</title>
+  <meta name="description" content="">
+
+	<!-- CSS & fonts -->
+	<link rel="stylesheet" href="/css/main.css">
+
+	<!-- RSS -->
+	<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" />
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+
+</head>
+
+
+<body>
+	<div id="wrap">
+	  	
+	  	<!-- Navigation -->
+	  	<nav id="nav">
+	<div id="nav-list">
+		<a href="//">Home</a>
+
+		<!-- Nav pages -->
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+    
+    <!-- Nav links -->
+	  
+
+
+	</div>
+  
+  <!-- Nav footer -->
+	
+	  <footer>
+	
+	<span>version 1.0.0</span>
+
+</footer>
+	
+
+</nav>
+
+    
+    <!-- Icon menu -->
+	  <a id="nav-menu">
+	  	<div id="menu"></div>
+	  </a>
+
+      <!-- Header -->
+      
+        <header id="header" class="parent justify-spaceBetween">
+  <div class="inner w100 relative">
+    <span class="f-left">  
+      <a href="//">
+        <h1>
+          <span>Xinyu Wu</span>
+        </h1>
+      </a>
+    </span>
+    <span id="nav-links" class="absolute right bottom">
+      <!-- Nav pages -->
+	    
+	      
+	    
+	      
+	    
+	      
+	    
+	      
+	    
+	      
+	    
+	      
+	    
+      
+      <!-- Nav links -->
+	    
+
+
+    </span>
+  </div>
+</header>
+
+
+
+
+      
+
+    <!-- Main content -->
+	  <div id="container">
+		  
+		<main>
+
+			<article id="post-page">
+	<h2>Deep Learning Concept 6: cross entropy loss</h2>		
+	<time datetime="2018-09-10T00:00:00-04:00" class="by-line">10 Sep 2018</time>
+	<div class="content">
+
+		<p>The most common loss function used in machine learning are MAE (mean absolute error), MSE (mean squared error) and cross entropy loss. This blog introduces cross entropy loss.<br />
+We calcualte this loss for classification model which outputs a probability for each class.</p>
+
+<h3 id="explanation-with-intuition">Explanation with intuition</h3>
+<p>this loss increases when the probability of prediction diverges from ground truth, namely if the gt label is 1 while we predict 0.1 probability for label 1. Because we are calculating log, the loss increase rapidly when the probability is close to 0.</p>
+
+<h3 id="explanation-with-math">Explanation with math</h3>
+<p><strong>Calculation of probability happens only when the prediction matches with the ground truth</strong>.</p>
+
+<p>For binary classification: <script type="math/tex">-(ylog(p) + (1 - y)log(1 - p))</script><br />
+where p is the probability for class 1.</p>
+
+<p>For multi-class classification: <script type="math/tex">\sum_{c=1}^{M}y_{o,c}log(p_{o,c})</script><br />
+where M is number of classes;<br />
+y is the binary indicator (0 or 1) if class label c is the correct classification for observation o;<br />
+p is the predicted probability observation o is of class c..</p>
+
+<p>Code for binary classification:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">CrossEntropy</span><span class="p">(</span><span class="n">yHat</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+      <span class="k">return</span> <span class="o">-</span><span class="n">log</span><span class="p">(</span><span class="n">yHat</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="k">return</span> <span class="o">-</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">yHat</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Code for multi-class classification:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">CrossEntropy</span><span class="p">(</span><span class="n">probability_list</span><span class="p">,</span> <span class="n">ground_truth_label</span><span class="p">):</span>
+<span class="c"># probability_list is a list of probability that corresponds with each label</span>
+<span class="c"># ground_truth_label is an integer ranging from 0 to len(probability_list) - 1</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">log</span><span class="p">(</span><span class="n">probability_list</span><span class="p">[</span><span class="n">ground_truth</span><span class="p">])</span>
+</code></pre></div></div>
+
+		
+	</div>
+</article>
+
+
+
+	  </main>
+		
+		  <!-- Pagination links -->
+      
+
+	  </div>
+	    
+	    <!-- Footer -->
+	    <footer><span></span></footer>
+
+
+	    <!-- Script -->
+      <script src="/js/main.js"></script>	
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+	</div>
+</body>
+</html>
