@@ -4,12 +4,22 @@
  <title>Xinyu</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <id>http://localhost:4000</id>
- <updated>2018-09-10T23:19:34-04:00</updated>
+ <updated>2018-09-11T22:47:13-04:00</updated>
  <author>
    <name></name>
    <uri></uri>
    <email></email>
  </author>
+
+ 
+
+ <entry>
+   <title>Deep Learning Concept 7: softmax</title>
+   <link href="http://localhost:4000/Deep-Learning-07"/>
+   <id>http://localhost:4000/Deep-Learning-07</id>
+   <updated>2018-09-11T00:00:00-04:00</updated>
+   <content type="html">&lt;h3 id=&quot;why-we-need-softmax&quot;&gt;Why we need softmax?&lt;/h3&gt; &lt;p&gt;In binary classification problem, we can use logistic regression to do the classification, namely compute the probability of each class. In multi-class classification, we need to have a similar way to convert the neural network output to the probability for each class. Softmax helps us...</content>
+ </entry>
 
  
 
